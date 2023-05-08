@@ -106,7 +106,7 @@ func loadConfig() (*xferConfig, error) {
 		
 		// create default config based on input
 		c.ServerEndpoint = "https://transfer.sh/"
-		err = saveConfig(c)
+		err := saveConfig(c)
 		if err != nil {
 			log.Fatalf("Failed to save your configuration file: %s", err)
 		}
