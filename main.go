@@ -79,10 +79,12 @@ func loadConfig() (*xferConfig, error) {
 	c := new(xferConfig)
 
 	if fileNotExists(getConfigFullName()) {
-		fmt.Println("Enter your transfer.sh server endpoint (e.g. https://transfer.sh): ")
+		// fmt.Println("Enter your transfer.sh server endpoint (e.g. https://transfer.sh): ")
 
-		reader := bufio.NewReader(os.Stdin)
+		// reader := bufio.NewReader(os.Stdin)
 		// ReadString will block until the delimiter is entered
+		
+		/*
 		input, err := reader.ReadString('\n')
 		if err != nil {
 			log.Fatalf("Sorry, i couldn't understand what you typed: %s", err)
@@ -99,9 +101,11 @@ func loadConfig() (*xferConfig, error) {
 		if !strings.HasSuffix(input, "/") {
 			input += "/"
 		}
-
+		
+		*/
+		
 		// create default config based on input
-		c.ServerEndpoint = input
+		c.ServerEndpoint = "https://transfer.sh/"
 		err = saveConfig(c)
 		if err != nil {
 			log.Fatalf("Failed to save your configuration file: %s", err)
@@ -142,7 +146,7 @@ func main() {
 	switch len(os.Args) {
 	case 1:
 		// help
-		fmt.Printf("xfer (version %s) - help:\n\nSimply pass in the filename you wish to upload!\n", Version)
+		fmt.Printf("transfer.sh (version %s) - help:\n\nSimply pass in the filename you wish to upload!\n", Version)
 	case 2:
 		// get argument
 		a := os.Args[1]
