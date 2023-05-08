@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bufio"
+	// "bufio"
 	_ "embed"
 	"errors"
 	"fmt"
